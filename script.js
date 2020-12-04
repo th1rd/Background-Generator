@@ -16,11 +16,20 @@ function setGradient(){
 	css.textContent = body.style.background + ";";
 }
 
+function getRandomColor(){
+	return "#" + Math.random().toString(16).slice(2, 8);
+}
+
+function setRandomColor(){
+	color1.value = getRandomColor();
+	color2.value = getRandomColor();
+
+	setGradient();
+}
+
+
 color1.addEventListener("input", setGradient);
 
 color2.addEventListener("input", setGradient);
 
-
-
-
-
+button.addEventListener("click", setRandomColor);
